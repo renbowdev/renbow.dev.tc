@@ -44,10 +44,10 @@
     fetch("https://ifconfig.me/all")
       .then(res => res.text())
       .then(ip => {
-        document.getElementById("user-ip").textContent = "IP Adresiniz: " + ip.trim();
+        document.getElementById("user-ip").textContent = " " + ip.trim();
       })
       .catch(err => {
-        document.getElementById("user-ip").textContent = "IP adresi alınamadı.";
+        document.getElementById("user-ip").textContent = " ";
       });
   </script>
 </body>
