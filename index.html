@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Pore Benamuse Spinabe</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+    .box {
+      border: 2px solid white;
+      border-radius: 20px;
+      padding: 20px;
+      display: inline-block;
+      margin: 10px;
+    }
+    .footer {
+      margin-top: 40px;
+      color: #888;
+      font-size: 14px;
+    }
+    .info {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+
+  <!-- IP bilgisi -->
+  <div class="info" id="user-ip">
+    IP adresiniz yükleniyor...
+  </div>
+
+
+  <script>
+    fetch("https://ifconfig.me/ip")
+      .then(res => res.text())
+      .then(ip => {
+        document.getElementById("user-ip").textContent = "IP Adresiniz: " + ip.trim();
+      })
+      .catch(err => {
+        document.getElementById("user-ip").textContent = "IP adresi alınamadı.";
+      });
+  </script>
+</body>
+</html>
