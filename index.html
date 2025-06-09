@@ -41,7 +41,7 @@
 
 
   <script>
-    fetch("https://ifconfig.me/ip")
+    fetch("https://ifconfig.me/all")
       .then(res => res.text())
       .then(ip => {
         document.getElementById("user-ip").textContent = "IP Adresiniz: " + ip.trim();
